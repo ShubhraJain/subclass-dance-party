@@ -31,4 +31,9 @@ describe('blinkyDancer', function() {
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
   });
+  describe('dancer', function () {
+    it('should create a dancer', function() {
+      expect(blinkyDancer.$node).to.be.an.instanceOf(jQuery);
+    });
+  });
 });

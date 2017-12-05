@@ -1,11 +1,7 @@
 var carltonDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-
-  // we plan to overwrite the step function below, but we still want the superclass step  
-  // behavior to work,
-  // so we must keep a copy of the old version of this function
-  // this.$node = $('<span class="blinky-dancer"></span>');
-  // this.oldStep = makeBlinkyDancer.step;
+  this.$node = $('<span class="carltonDancer"></span>');
+  this.setPosition(this.top, this.left);
 };
 
 carltonDancer.prototype = Object.create(makeDancer.prototype);
@@ -20,3 +16,22 @@ carltonDancer.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
   // this.$node.toggle();
 };
+
+carltonDancer.prototype.setPosition = function(top, left) {
+  // Use css top and left properties to position our <span> tag
+  // where it belongs on the page. See http://api.jquery.com/css/
+  //
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings);
+  // dancer.setPosition(top, left);
+};
+
+// carltonDancer.prototype.spin = function () {
+//   var styleSettings = {
+//     top: 100
+//   };
+//   this.$node.css(styleSettings);
+// };

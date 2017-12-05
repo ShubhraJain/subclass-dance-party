@@ -15,7 +15,7 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name'); //makeblinkydancer
 
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
@@ -49,7 +49,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     
-    // dancer.$node.append('<img src="shubhra dancer.gif">');
+    dancer.$node.append('<img src="shubhra dancer.gif">');
     
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
@@ -77,9 +77,25 @@ $(document).ready(function() {
   });
   
   $('.lineUp').on('click', function(event) {
+    // window.dancers[0].spin();
     window.dancers.forEach(function(dancer) {
       dancer.lineUp();
     });
+    window.dancers[0].down();
+    // $('window.dancers[0]').addclass('spinner');
+    setTimeout(function() {
+      window.dancers[0].lineUp();
+    }, 2000); 
+  });
+  // $('body').on('mouseenter', '.carltonDancer', function() {
+  //   $(this).animate({width: '-=50px', height: '-=50px'}, 'fast');
+  // }).son('mouseleave', '.carltonDancer', function() {
+  //   $(this).animate({width: '+=50px', height: '+=50px'}, 'fast');
+  // });
+  $('body').on('mouseenter', '.carltonDancer', function() {
+    $(this).fadeOut();
+  }).on('mouseleave', '.carltonDancer', function() {
+    $(this).fadeIn();
   });
 });
 
