@@ -60,3 +60,82 @@ makeDancer.prototype.down = function () {
   this.$node.css(styleSettings);
 };
 
+makeDancer.prototype.goLeft = function () {
+  var styleSettings = {
+    left: 100,
+    top: Math.floor(Math.random() * 700)
+  };
+  this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.goRight = function () {
+  var styleSettings = {
+    left: 1500,
+    top: Math.floor(Math.random() * 700)
+  };
+  this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.alignCentrally = function () {
+  // var styleSettings = {
+  //   left: 800,
+  //   top: Math.floor(Math.random() * 700)
+  // };
+  this.$node.animate({
+    borderSpacing: 0,
+    left: '800px'
+  }, {
+    step: function(now) {
+      $(this).css('-webkit-transform', 'none');
+      $(this).css('-moz-transform', 'none');
+      $(this).css('transform', 'none');
+    }, 
+    duration: 'slow'
+  }, 'swing');
+};
+
+// class makeDancer {
+//   constructor(top, left, timeBetweenSteps) {
+
+//     this.$node = $('<span class="dancer"></span>');
+//     this.timeBetweenSteps = timeBetweenSteps;
+//     this.top = top;
+//     this.left = left;
+  
+//     this.step();
+//     this.setPosition(this.top, this.left);
+//   }
+  
+//   step() {
+//     var usefulWord = this;
+//     setTimeout(function() {
+//       usefulWord.step(); 
+//     }, this.timeBetweenSteps);
+//   }
+  
+//   setPosition(top, left) {
+//     var styleSettings = {
+//       top: top,
+//       left: left
+//     };
+//     this.$node.css(styleSettings);
+//   }
+  
+//   lineUp() {
+//     var styleSettings = {
+//       top: 400
+//     };
+//     this.$node.css(styleSettings);
+//   }
+  
+//   down() {
+//     var styleSettings = {
+//       top: 700
+//     };
+//     this.$node.css(styleSettings);
+//   }
+// }
+
+
+
+

@@ -49,7 +49,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     
-    dancer.$node.append('<img src="shubhra dancer.gif">');
+    dancer.$node.append('<img src="minion.gif">');
     
     $('body').append(dancer.$node);
     window.dancers.push(dancer);
@@ -76,6 +76,18 @@ $(document).ready(function() {
     window.dancers.push(dancer);
   });
   
+  
+  $('.split').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (i % 2 === 0) {
+        window.dancers[i].goLeft();
+      } else {
+        window.dancers[i].goRight();
+      }
+    }
+  });
+  
+  
   $('.lineUp').on('click', function(event) {
     // window.dancers[0].spin();
     window.dancers.forEach(function(dancer) {
@@ -87,6 +99,18 @@ $(document).ready(function() {
       window.dancers[0].lineUp();
     }, 2000); 
   });
+  
+  $('.center').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (i % 4 === 0) {
+        window.dancers[i].alignCentrally();
+      }
+    }
+  });
+  
+  
+  
+  
   // $('body').on('mouseenter', '.carltonDancer', function() {
   //   $(this).animate({width: '-=50px', height: '-=50px'}, 'fast');
   // }).son('mouseleave', '.carltonDancer', function() {

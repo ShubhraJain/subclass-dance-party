@@ -29,9 +29,4 @@ carltonDancer.prototype.setPosition = function(top, left) {
   // dancer.setPosition(top, left);
 };
 
-// carltonDancer.prototype.spin = function () {
-//   var styleSettings = {
-//     top: 100
-//   };
-//   this.$node.css(styleSettings);
-// };
+// 
